@@ -1,0 +1,77 @@
+<html>
+
+<head></head>
+
+<body>
+    <input id="d1" type="text" placeholder="firstname">
+    <button id="d2" onclick="abc()"></button>
+    <button id="d5" onclick="bbb()"></button>
+    <input id="d3" type="text" onkeyup="ccc()">
+    <ul id="d4"></ul>
+    <script>
+        var cindex;
+        var x = document.getElementById("d1")
+
+        var y = document.getElementById("d2")
+        y.innerHTML = "save"
+
+        var f = document.getElementById("d3")
+
+        var v = document.getElementById("d5")
+        v.innerHTML = "update"
+        v.style.display = "none"
+
+
+        var br = [];
+        function abc() {
+            br.push(x.value)
+            gentable(br)
+        }
+        function gentable(br) {
+            var z = document.getElementById("d4")
+            z.innerHTML = ""
+            br.forEach(function (a, b) {
+                var nli = document.createElement("li")
+                nli.innerHTML = a;
+                var nbt = document.createElement("button")
+                nbt.innerHTML = "Delete"
+                nli.appendChild(nbt)
+
+                var nbt1 = document.createElement("button")
+                nbt1.innerHTML = "Edit"
+                nli.appendChild(nbt1)
+                z.appendChild(nli)
+
+                nbt.onclick = function () {
+                    br.splice(a, 1)
+                    gentable(br)
+                }
+                nbt1.onclick = function () {
+                    x.value = a
+                    y.style.display = "none"
+                    v.style.display = "block"
+                    cindex=b
+                }
+            })
+        }
+        function bbb() {
+            br[cindex] = x.value
+            y.style.display = "block"
+            v.style.display = "none"
+            x.value = ""
+            gentable(br)
+        }
+        function ccc() {
+            var z = document.getElementById("d4")
+            z.innerHTML = ""
+            var ar = br.filter(function (b) {
+                return b.startsWith(f.value);
+            })
+            gentable(ar);
+        }
+
+
+    </script>
+</body>
+
+</html>

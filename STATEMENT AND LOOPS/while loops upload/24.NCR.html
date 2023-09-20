@@ -1,0 +1,29 @@
+<html>
+    <head></head>
+    <body>
+        <script>
+            var a=+prompt()
+            var b=+prompt()
+            var nfact=1;
+            var rfact=1;
+            var difffact=1;
+            var c=1;
+            while(c<=a){
+                nfact=nfact*c
+                c++;
+            }
+            var d=1
+            while(d<=b){
+                rfact=rfact*d
+                d++;
+            }
+            var e=1
+            while(e<=(a-b)){
+                difffact=difffact*e
+                e++;
+            }
+            var ncr=nfact/(rfact*difffact)
+            console.log(ncr)
+        </script>
+    </body>
+</html>

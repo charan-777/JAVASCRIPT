@@ -1,0 +1,40 @@
+<html>
+    <head>
+        <style>
+             #d1{
+                border: 1px solid;
+                width: 200px;
+                height: 100px; 
+
+             }
+        </style>
+    </head>
+    <body>
+       <div id ="d1"></div>
+       <br>
+       <button  onclick="a()">Red</button>
+       <button  onclick="b()">Blue</button>
+       <button  onclick="c()">Green</button>
+       <button  onclick="d()">Reset</button>
+        <script>
+          function a(){
+            var x=document.querySelector("#d1")
+           x.style.backgroundColor="red"
+          }
+          function b(){
+          var y=document.querySelector("#d1")
+          y.style.backgroundColor="blue"
+          }
+
+          function c(){
+          var z=document.querySelector("#d1")
+          z.style.backgroundColor="green"
+          }
+
+          function d(){
+          var w=document.querySelector("#d1")
+          w.style.backgroundColor="white"
+          }
+        </script>
+    </body>
+</html>

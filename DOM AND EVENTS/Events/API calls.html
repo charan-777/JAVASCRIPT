@@ -1,0 +1,68 @@
+<html>
+    <head>
+        
+    </head>
+    <body>
+        <table border="2">
+            <thead>
+                <th>Name</th>
+                <th>capital</th>
+                <th>Population</th>
+                <th>Area</th>
+                <th>Border</th>
+                <th>Flag</th>
+            </thead>
+           <tbody id="d2"></tbody>
+        </table>
+        <button id="d1" onclick="abc()"></button>
+        <script>
+            var country=[];
+            var z=document.getElementById("d1").innerHTML="click Me"
+            function abc(){
+            fetch("https://restcountries.com/v3/all").then(function(res){
+                res.json().then(function(data){
+                   country=data;
+                   console.log(country)
+                   genUI();
+                })
+            })
+        }
+            function genUI(){
+                document.getElementById("d2").innerHTML=""
+                country.forEach(function(a){
+                    var ntr=document.createElement("tr")
+                    var ntd=document.createElement("td")
+                    ntd.innerHTML=a.name.common
+                    ntr.appendChild(ntd)
+
+                    var ntd=document.createElement("td")
+                    ntd.innerHTML=a.capital
+                    ntr.appendChild(ntd)
+
+                    var ntd=document.createElement("td")
+                    ntd.innerHTML=a.population
+                    ntr.appendChild(ntd)
+
+                    var ntd=document.createElement("td")
+                    ntd.innerHTML=a.area
+                    ntr.appendChild(ntd)
+
+                    var ntd=document.createElement("td")
+                    ntd.innerHTML=a.borders
+                    ntr.appendChild(ntd)
+
+                    var ntd=document.createElement("td")
+                    var nimg=document.createElement("img")
+                    nimg.src=a.flags[0]
+                    nimg.style.width="100px"
+                    ntd.appendChild(nimg)
+                    ntr.appendChild(ntd)
+                  
+                    document.getElementById("d2").appendChild(ntr)
+                    
+                    
+            })
+        }
+        </script>
+    </body>
+</html>

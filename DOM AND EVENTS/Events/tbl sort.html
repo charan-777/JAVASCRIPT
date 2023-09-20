@@ -1,0 +1,82 @@
+<html>
+
+<head></head>
+
+<body>
+    <input id="d1" type="text" placeholder="firstname">
+    <br>
+    <input id="d2" type="text" placeholder="lastname">
+    <br>
+    <input id="d3" type="text" placeholder="age">
+    <br>
+    <button id="d4" onclick="abc()"></button>
+    <button id="d6" onclick="bbb()"></button>
+    <table border="2">
+        <thead>
+            <th>firstname</th>
+            <th>lastname</th>
+            <th>age</th>
+        </thead>
+        <tbody id="d5"></tbody>
+    </table>
+    <script>
+        var x = document.getElementById("d1")
+        var y = document.getElementById("d2")
+        var z = document.getElementById("d3")
+
+        var u = document.getElementById("d4")
+        u.innerHTML = "save"
+
+        var v = document.getElementById("d6")
+        v.innerHTML = "fsort"
+
+
+        var br = []
+        function abc() {
+            var people = {
+                firstname: "",
+                lastname: "",
+                age: "",
+            }
+            people.firstname = x.value
+            people.lastname = y.value
+            people.age = z.value
+            br.push(people)
+            gentable()
+        }
+        function gentable() {
+            document.getElementById("d5").innerHTML = ""
+            br.forEach(function (a) {
+                var ntr = document.createElement("tr")
+                var ntd = document.createElement("td")
+                ntd.innerHTML = a.firstname
+                ntr.appendChild(ntd)
+
+                var ntd = document.createElement("td")
+                ntd.innerHTML = a.lastname
+                ntr.appendChild(ntd)
+
+                var ntd = document.createElement("td")
+                ntd.innerHTML = a.age
+                ntr.appendChild(ntd)
+                document.getElementById("d5").appendChild(ntr)
+            })
+        }
+        function bbb() {
+            br.sort(function (a, b) {
+                if (a.firstname > b.firstname) {
+                    return 1
+                }
+                if (a.firstname < b.firstname) {
+                    return -1
+                }
+                return 0
+            })
+            gentable();
+        }
+     
+
+    </script>
+</body>
+
+</html>

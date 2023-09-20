@@ -1,0 +1,39 @@
+<!-- 11.show blub on/off image using toggle button -->
+
+<html>
+    <head>
+        <style>
+            #d1{
+                width: 100px;
+                height: 100px;
+            }
+        </style>
+    </head>
+    <body>
+        <h1 style="text-align: center;color: red;">show blub on/off image using toggle button</h1>
+         <center><img id="d1" src="" ></center>
+        <br>
+       <center><button id="d2" style="background-color: orange;" onclick="abc()"></button></center>
+        <script>
+            var img=["https://static.vecteezy.com/system/resources/previews/017/348/068/original/lightbulb-idea-concept-line-icon-light-bulb-bright-creative-solution-and-innovation-pictogram-efficient-electric-low-energy-lightbulb-outline-sign-editable-stroke-isolated-illustration-vector.jpg",
+                    "https://t4.ftcdn.net/jpg/01/66/86/29/360_F_166862953_6Vy6pir6kahx4x6B5c9saPbwQ6yqNAnK.jpg",]       
+        
+               
+              var y = document.getElementById("d1")
+              y.src=img[0]
+              var z=document.getElementById("d2")
+              z.innerHTML="ON"
+
+               function abc(){
+                if(z.innerHTML==="ON"){
+                y.src=img[1]
+                z.innerHTML="OFF"
+                }
+                else{
+                y.src=img[0]
+                z.innerHTML="ON"
+                }
+               }
+        </script>
+    </body>
+</html>

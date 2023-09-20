@@ -1,0 +1,26 @@
+<html>
+    <head></head>
+    <body>
+        <script>
+            var a=+prompt()
+            var b=+prompt()
+            var nfact=1;
+            var rfact=1;
+            var difffact=1;
+            var c=1;
+            for(c=1;c<=a;c++){
+                nfact =nfact*c
+            }
+            var d=1
+            for(d=1;d<=b;d++){
+                rfact=rfact*d
+            }
+            var e=1
+            for(e=1;e<=(a-b);e++){
+                difffact=difffact*e
+            }
+            var ncr=nfact/(rfact*difffact)
+            console.log(ncr)
+        </script>
+    </body>
+</html>

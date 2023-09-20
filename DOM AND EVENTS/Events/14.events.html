@@ -1,0 +1,32 @@
+<html>
+    <head></head>
+    <body>
+        <h1 style="text-align: center;color: red;">show image using URL</h1>
+       <center><h4 style="color: red;">Enter image URL: <input id="d1" type="text" ></h4></center> 
+       <center><button id="d2" style="background-color:orange;" onclick="abc()"></button></center>
+       <br>
+      <center> <div id =d3></div></center>
+        <script>
+            var z=document.getElementById("d2")
+            z.innerHTML="Add image";
+            var w=document.getElementById("d3")
+            var br=[];
+            function abc(){
+                var y=document.getElementById("d1")
+                 br.push(y.value)
+                 addimg();
+            }
+            function addimg(){
+                w.innerHTML=""
+                br.forEach(function(a){
+                 var x=document.createElement("img")   
+                 x.src=a;
+                 x.width=200;
+                 x.height=200;
+                 document.getElementById("d3").appendChild(x)
+                })
+            }
+        
+        </script>
+    </body>
+</html>

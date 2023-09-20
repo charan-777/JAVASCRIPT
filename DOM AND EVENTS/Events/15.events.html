@@ -1,0 +1,32 @@
+<html>
+    <head></head>
+    <body>
+       
+        <h1 style="text-align: center;color: red;">Add student</h1>
+        <center>
+        <input id="d1" type="text" >
+         <button id="d2" style="background-color: orange;" onclick="abc()"></button>
+        </center>
+        <ul id="d3" ></ul>
+        <script>
+            var x=document.getElementById("d2")
+            x.innerHTML="Add student"
+            var z=document.getElementById("d3")
+            var br=[]
+            function abc() {
+                var y=document.getElementById("d1")
+                br.push(y.value)
+                addlist();
+            }
+            function addlist(){
+             z.innerHTML="";
+            br.forEach(function(a){
+                var nli=document.createElement("li")
+                nli.innerHTML=a;
+                document.getElementById("d3").appendChild(nli)
+            })
+        }
+              
+        </script>
+    </body>
+</html>

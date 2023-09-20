@@ -1,0 +1,150 @@
+<html>
+
+<head></head>
+
+<body>
+    <table border="2">
+        <thead>
+            <th>firstname</th>
+            <th>lastname</th>
+            <th>age</th>
+            <th>gender</th>
+            <th>city</th>
+            <th>salary</th>
+        </thead>
+        <tbody id="d3"></tbody>
+    </table>
+    <br>
+        <table  border="2">
+            <thead>
+                <th>firstname</th>
+                <th>lastname</th>
+                <th>age</th>
+                <th>gender</th>
+                <th>city</th>
+                <th>salary</th>
+            </thead>
+            <tbody id="d7"></tbody>
+        </table>
+    <script>
+        var people = [
+            {
+                "firstname": "praveen",
+                "lastname": "gubbala",
+                "age": 36,
+                "gender": "male",
+                "city": "hyd",
+                "salary": 10000
+            },
+            {
+                "firstname": "srikanth",
+                "lastname": "gubbala",
+                "age": 32,
+                "gender": "male",
+                "city": "bengaluru",
+                "salary": 20000
+            },
+            {
+                "firstname": "pradeep",
+                "lastname": "reddy",
+                "age": 21,
+                "gender": "male",
+                "city": "hyd",
+                "salary": 25000
+            },
+            {
+                "firstname": "mounika",
+                "lastname": "mudiraj",
+                "age": 20,
+                "gender": "female",
+                "city": "nalgonda",
+                "salary": 30000
+            },
+            {
+                "firstname": "nikhil",
+                "lastname": "m",
+                "age": 22,
+                "gender": "male",
+                "city": "guntur",
+                "salary": 2000
+            },
+            {
+                "firstname": "riya",
+                "lastname": "bhadouria",
+                "age": 14,
+                "gender": "female",
+                "city": "indore",
+                "salary": 40000
+            }
+        ];
+
+        // Display all male and female people in two separate tables.
+        people.forEach(function (a) {
+            if(a.gender==="male"){
+
+            var ntr = document.createElement('tr')
+
+            var firstnametd = document.createElement('td')
+            firstnametd.innerHTML = a.firstname
+            ntr.appendChild(firstnametd)
+
+
+            var lastnametd = document.createElement('td')
+            lastnametd.innerHTML = a.lastname
+            ntr.appendChild(lastnametd)
+
+
+            var agetd = document.createElement('td')
+            agetd.innerHTML = a.age
+            ntr.appendChild(agetd)
+
+
+            var gendertd = document.createElement('td')
+            gendertd.innerHTML = a.gender
+            ntr.appendChild(gendertd)
+
+            var citytd = document.createElement('td')
+            citytd.innerHTML = a.city
+            ntr.appendChild(citytd)
+
+            var salarytd = document.createElement('td')
+            salarytd.innerHTML = a.salary
+            ntr.appendChild(salarytd)
+
+            document.getElementById("d3").appendChild(ntr)
+            }
+            if(a.gender==="female"){
+                var ntr=document.createElement("tr")
+                var ntd=document.createElement("td")
+                ntd.innerHTML=a.firstname
+                ntr.appendChild(ntd)
+
+                var ntd=document.createElement("td")
+                ntd.innerHTML=a.lastname
+                ntr.appendChild(ntd)
+
+                var ntd=document.createElement("td")
+                ntd.innerHTML=a.age
+                ntr.appendChild(ntd)
+
+                var ntd=document.createElement("td")
+                ntd.innerHTML=a.gender
+                ntr.appendChild(ntd)
+
+                var ntd=document.createElement("td")
+                ntd.innerHTML=a.city
+                ntr.appendChild(ntd)
+
+                var ntd=document.createElement("td")
+                ntd.innerHTML=a.salary
+                ntr.appendChild(ntd)
+                document.getElementById("d7").appendChild(ntr)
+            }
+
+        })
+
+
+    </script>
+</body>
+
+</html>

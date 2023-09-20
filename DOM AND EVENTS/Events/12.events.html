@@ -1,0 +1,45 @@
+<html>
+    <head>
+        <style>
+            #d1,#d2,#d3{
+                width: 200px;
+                display: inline-block;
+                margin:0 auto ;
+            }
+            #d4{
+                
+                width: 200px;
+                height: 150px;
+                margin: 0 auto;
+            }
+        </style>
+    </head>
+    <body>
+        <center>
+        <img id="d1" onmouseover="abc(event)" src=>
+        <img id="d2" onmouseover="abc(event)"  src=>
+        <img id="d3" onmouseover="abc(event)"  src=>
+        </center>
+
+        <br>
+        <div id="d4" ></div>
+        <script>
+             var img=["https://images.unsplash.com/photo-1529074963764-98f45c47344b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8YWVyb3BsYW5lfGVufDB8fDB8fHww&w=1000&q=80",
+                   "https://www.rd.com/wp-content/uploads/2020/01/GettyImages-1131335393-e1650030686687.jpg ",
+                   "https://t3.ftcdn.net/jpg/00/20/13/60/360_F_20136083_gk0ppzak6UdK9PcDRgPdLjcuAdo7o1LK.jpg"];
+
+              document.getElementById("d1").src=img[0]
+              document.getElementById("d2").src=img[1]
+              document.getElementById("d3").src=img[2]
+
+            function abc(ev){
+             document.getElementById("d4").innerHTML=
+
+
+
+            
+
+            }
+        </script>
+    </body>
+</html>

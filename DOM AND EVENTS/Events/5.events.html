@@ -1,0 +1,19 @@
+<html>
+   <head></head> 
+   <body>
+    <div style="text-align: center;">
+        <h1 style="color:red">Toggle button to show true/false</h1>
+        <button style="background-color: orange;" onclick="abc()">toggle </button>  <span id="d1" ></span>
+    </div>
+    <script>
+       var isButtonClicked=false;
+       document.getElementById("d1").innerHTML=isButtonClicked
+        function abc(){
+        isButtonClicked=!isButtonClicked;
+        document.getElementById("d1").innerHTML=isButtonClicked;
+        document.getElementById("d1").style.color="red"
+
+       }
+    </script>
+   </body>
+</html>

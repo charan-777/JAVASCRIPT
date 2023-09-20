@@ -1,0 +1,68 @@
+<html>
+
+<head></head>
+
+<body>
+    <input id="d1" type="text" placeholder="firstname">
+    <br>
+    <button id="d2" onclick="abc()"></button>
+    <button id="d4" onclick="efg()"></button>
+    <button id="d5" onclick="hij()"></button>
+    <ul id="d3"></ul>
+    <script>
+        var z = document.getElementById("d1")
+
+        var y = document.getElementById("d2")
+        y.innerHTML = "Add button"
+
+        var u = document.getElementById("d4")
+        u.innerHTML = "A-Z"
+
+        var v = document.getElementById("d5")
+        v.innerHTML = "Z-A"
+        var br = [];
+        function abc() {
+            br.push(z.value)
+            gentable()
+        }
+        function gentable() {
+            var x = document.getElementById("d3")
+            x.innerHTML = ''
+            br.forEach(function (a, b) {
+                var nli = document.createElement("li")
+                nli.innerHTML = a;
+                x.appendChild(nli)
+            })
+        }
+        function efg() {
+            br.sort(function (a, b) {
+                if (a > b) {
+                    return 1
+                }
+                if (a < b) {
+                    return -1
+                }
+                return 0
+            })
+            gentable()
+        }
+        function hij(){
+            br.sort(function(a,b){
+                if(a<b){
+                    return 1
+                }
+                if(a>b){
+                    return -1
+                }
+                return 0
+            })
+            gentable()
+        }
+
+
+
+
+    </script>
+</body>
+
+</html>

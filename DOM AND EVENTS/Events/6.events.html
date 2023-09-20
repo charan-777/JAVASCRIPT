@@ -1,0 +1,48 @@
+<!-- <html>
+    <head></head>
+    <body>
+        <button onclick="abc(event)">ON</button>
+        <script>
+           function abc(ev){
+           if(ev.target.innerHTML==="ON"){
+            ev.target.innerHTML="OFF"
+           }
+           else{
+            ev.target.innerHTML="ON"
+           }
+        }
+        </script>
+    </body>
+</html> -->
+<html>
+    <head>
+        <style>
+            #d1{
+                border: 1px solid;
+                width: 30px;
+                height: 20px;
+                text-align: center;
+            }
+        </style>
+    </head>
+    <body>
+        <div id="d1" onclick="abc()"></div>
+        <script>
+             var y=document.getElementById("d1")
+             y.innerHTML="ON"
+        
+            function abc(){
+
+            if(y.innerHTML==="ON"){
+                y.innerHTML="OFF"
+            }
+            else{
+                y.innerHTML="ON"
+            }
+         
+
+            }
+            
+        </script>
+    </body>
+</html>
